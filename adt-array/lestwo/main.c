@@ -25,13 +25,12 @@ void AppendArray(struct Array *arr, int number){
   }
 }
 
-void InsertAtIndex(struct Array arr, int index, int number){
-  for(int i = arr.length; i > index; i--){
-    arr.A[i] = arr.A[i-1];
+void InsertAtIndex(struct Array *arr, int index, int number){
+  for(int i = arr->length; i > index; i--){
+    arr->A[i] = arr->A[i-1];
   }
-  arr.A[index] = number;
-  arr.length++;
-  DisplayArray(arr);
+  arr->A[index] = number;
+  arr->length++;
 }
 
 int main(){
@@ -41,6 +40,7 @@ int main(){
   DisplayArray(arr);
   AppendArray(&arr, 9);
   DisplayArray(arr);
-  InsertAtIndex(arr, 2, 2);
+  InsertAtIndex(&arr, 2, 2);
+  DisplayArray(arr);
   return 0;
 }
