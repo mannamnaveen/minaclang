@@ -18,10 +18,11 @@ void DisplayArray(struct Array arr){
   printf("\n");
 }
 
-void AppendArray(struct Array arr, int number){
-  arr.A[arr.length] = number;
-  arr.length++;
-  DisplayArray(arr);
+void AppendArray(struct Array *arr, int number){
+  if (arr->size > arr->length){
+      arr->A[arr->length] = number;
+  arr->length++;
+  }
 }
 
 void InsertAtIndex(struct Array arr, int index, int number){
@@ -38,7 +39,7 @@ int main(){
   struct Array arr={{1, 2, 3, 4, 5}, 10, 5};
 
   DisplayArray(arr);
-  AppendArray(arr, 6);
+  AppendArray(&arr, 9);
   DisplayArray(arr);
   InsertAtIndex(arr, 2, 2);
   return 0;
