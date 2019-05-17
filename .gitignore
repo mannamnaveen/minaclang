@@ -11,7 +11,7 @@
 *.ko
 *.obj
 *.elf
-
+main
 # Linker output
 *.ilk
 *.map
