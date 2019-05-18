@@ -64,7 +64,6 @@ int main(){
   printf("Bubble Sort in C Lang.\n");
   Array arr;
   arr = DefineArray();
-  // BubbleSort(arr);
   int res = LinearSearch(arr, 2);
   DisplayArray(arr);
   if(res == 1){
