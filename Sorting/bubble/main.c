@@ -28,9 +28,33 @@ void DisplayArray(Array arr){
   printf("\n");
 }
 
+void Swap(int *a, int *b){
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void BubbleSort(Array arr){
+  int flag;
+  for(int i = 0; i < arr.length - 1; i++){
+    flag = 0;
+    for(int j = 0; j < arr.length - i - 1; j++){
+      if(arr.A[j] > arr.A[j+1]){
+        Swap(&arr.A[j], &arr.A[j+1]);
+      }
+      flag = 1;
+    }
+    if(flag == 0){
+      break;
+    }
+  }
+}
+
 int main(){
   printf("Bubble Sort in C Lang.\n");
   Array arr;
   arr = DefineArray();
+  DisplayArray(arr);
+  BubbleSort(arr);
   DisplayArray(arr);
 }
